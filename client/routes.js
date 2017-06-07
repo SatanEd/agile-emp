@@ -15,11 +15,13 @@ FlowRouter.route('/room/:id', {
   action(params, queryParams) {
     import './room.html';
 
+    let roomId = typeof(params.id) === 'number' ? params.id : 1;
+
     Template.room.helpers({
-      roomId: params.id,
+      roomId: roomId,
 
       tables() {
-        let room = Rooms.findOne({roomId: eval(params.id)});
+        let room = Rooms.findOne({roomId: eval(roomId)});
 
         if (room) {
           return room.tables;
