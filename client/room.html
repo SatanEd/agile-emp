@@ -1,4 +1,5 @@
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <title>agile-emp</title>
 </head>
 
@@ -7,21 +8,32 @@
 </body>
 
 <template name="room">
-    <h1 class="title_1">Room #{{roomId}}</h1>
+    <h1 class="title_1">Room #{{id}}</h1>
 
-    <table>
-        <tr>
-            {{#each tables}}
-                {{> table}}
-            {{else}}
-                {{> noTables}}
-            {{/each}}
-        </tr>
+    <table class="room">
+        {{#if tables}}
+            <tr>
+                {{#each tables}}
+                    {{> table}}
+                {{/each}}
+            </tr>
+        {{else}}
+            {{> noTables}}
+        {{/if}}
     </table>
 </template>
 
 <template name="table">
-    <td class="{{status}}">{{id}}</td>
+    <td class="table__itm {{status}}">
+        {{id}}
+        <div class="table__popup">
+            <p>Id: {{id}}</p>
+            <p>Name: {{name}}</p>
+            <p>Role: {{role}}</p>
+            <p>Age: {{age}}</p>
+            <p>Status: <b class="{{status}}">{{status}}</b></p>
+        </div>
+    </td>
 </template>
 
 <template name="noTables">

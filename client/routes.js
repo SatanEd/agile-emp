@@ -18,17 +18,36 @@ FlowRouter.route('/room/:id', {
     let roomId = typeof(params.id) === 'number' ? params.id : 1;
 
     Template.room.helpers({
-      roomId: roomId,
+      id: roomId,
 
       tables() {
-        let room = Rooms.findOne({roomId: eval(roomId)});
+        let room = Rooms.findOne({id: eval(roomId)});
 
         if (room) {
-          return room.tables;
+          let roomMap = room.map;
+          let tablesPosition = getTablePosition(roomMap);
+
+          if (room.tables.length !== 0) {
+            return [].concat(room.tables);
+          }
         } else {
-          return;
+          return false;
         }
       }
     });
   }
 });
+
+function getTablePosition(map) {
+  let result = [];
+
+  map.filter(function(itm, indx) {
+    if (itm === 1) {
+      result.push(indx);
+
+      return;
+    }
+  });
+
+  return result;
+}
