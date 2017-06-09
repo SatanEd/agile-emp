@@ -86,3 +86,55 @@ body {
 .popup > .table__popup {
   display: block;
 }
+
+//header
+.header {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+// /header
+
+//nav
+.nav {
+  &.nav-header {
+    & .nav__itm {
+      position: relative;
+      margin-right: 20px;
+      font-size: 16px;
+      text-decoration: none;
+      color: rgb(44, 37, 37);
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        left: 0;
+        display: block;
+        width: 0;
+        height: 1px;
+        margin: auto;
+        background-color: rgb(164, 137, 137);
+        transition: width 0.1s ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// /nav
+
+//table
+.table {
+  width: 10%;
+  height: 20px;
+  background: red;
+}
+// /table

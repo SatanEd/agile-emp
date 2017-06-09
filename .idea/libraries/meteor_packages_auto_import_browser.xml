@@ -117,6 +117,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/spacebars/1.0.15/web.browser/spacebars-runtime.js" />
         <item url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/deprecated.js" />
         <item url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/httpcall_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/meyerweb-reset/1.0.7/web.browser/reset.css" />
         <item url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.1.2/web.browser/react.js" />
         <item url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/test_responder.js" />
         <item url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/httpcall_server.js" />
@@ -288,6 +289,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/spacebars/1.0.15/web.browser/spacebars-runtime.js" />
       <root url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/deprecated.js" />
       <root url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/httpcall_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/meyerweb-reset/1.0.7/web.browser/reset.css" />
       <root url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.1.2/web.browser/react.js" />
       <root url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/test_responder.js" />
       <root url="file://$USER_HOME$/.meteor/packages/http/1.2.12/web.browser/httpcall_server.js" />

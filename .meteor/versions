@@ -44,6 +44,7 @@ logging@1.1.17
 mdg:validation-error@0.2.0
 meteor@1.6.1
 meteor-base@1.1.0
+meyerweb-reset@1.0.7
 minifier-css@1.2.16
 minifier-js@2.1.0
 minimongo@1.2.0
