@@ -2,45 +2,42 @@ import {Meteor} from 'meteor/meteor';
 import Rooms from '../imports/api/rooms/rooms';
 
 Meteor.startup(() => {
-  let i = Rooms.find({}).count();
-  let room = Rooms.find({id: 1}),
-    newId = room.tables ? room.tables.length : 1;
+});
 
-  if (i === 0) {
+Meteor.methods({
+  'new_room': (formData) => {
+    let done = {code: 200, message: "Collection successfully added."};
+    let cnt = Rooms.find({}).count();
+
+    let oficeMap = (r, c) => {
+      let result = new Array(64),
+        map = Object.keys(formData.room.map);
+      result = result.fill(0);
+
+      for (let i = 0; i <map.length; i++) {
+        result[map[i]] = 1;
+      }
+
+      return result
+    };
+
     let document = {
-      id: eval(i === 0 ? 1 : i),
-      name: "1",
+      id: (cnt === 0 ? 1 : cnt + 1),
+      name: formData.room.title || "",
       rows: 8,
       cols: 8,
-      length: 31,
-      map: [
-        0, 0, 0, 1, 1, 1, 1, 1,
-        0, 0, 0, 1, 1, 1, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 1, 1, 1, 1, 1,
-        0, 0, 0, 1, 1, 1, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 1, 1, 1, 1, 1,
-        1, 0, 0, 1, 1, 1, 1, 1
-      ],
-      tables: [{
-        position: {
-          x: 3,
-          y: 1
-        },
-        id: eval(newId),
-        name: 'Ed',
-        role: 'Frontend',
-        age: 28,
-        status: 'active'
-      }]
+      length: formData.room.length || 31,
+      map: oficeMap(this.rows, this.cols)
     };
 
     try {
       Rooms.schema.validate(document);
       Rooms.insert(document);
     } catch (e) {
-      console.log(e);
+      done = {code: 500, message: e.code};
+      console.log('\x1b[31m%s\x1b[0m', e);
     }
+
+    return done;
   }
 });

@@ -3,18 +3,11 @@ import {ReactiveVar} from 'meteor/reactive-var';
 
 import Rooms from '../imports/api/rooms/rooms';
 
-FlowRouter.route('/rooms', {
-  name: 'Rooms',
-  action(params, queryParams) {
-    console.log("Looking at a list?");
-  }
-});
+import './index.html';
 
 FlowRouter.route('/room/:id', {
   name: 'Room',
   action(params, queryParams) {
-    import './room.html';
-
     let roomId = typeof(params.id) === 'number' ? params.id : 1;
 
     Template.room.helpers({
@@ -25,7 +18,6 @@ FlowRouter.route('/room/:id', {
 
         if (room) {
           let roomMap = room.map;
-          let tablesPosition = getTablePosition(roomMap);
 
           if (room.tables.length !== 0) {
             return [].concat(room.tables);
@@ -38,16 +30,8 @@ FlowRouter.route('/room/:id', {
   }
 });
 
-function getTablePosition(map) {
-  let result = [];
-
-  map.filter(function(itm, indx) {
-    if (itm === 1) {
-      result.push(indx);
-
-      return;
-    }
-  });
-
-  return result;
-}
+FlowRouter.route('/rooms', {
+  name: 'Tables',
+  action(params, queryParams) {
+  }
+});
