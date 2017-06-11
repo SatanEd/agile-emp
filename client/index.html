@@ -34,94 +34,101 @@
     </table>
 </template>
 
-<template name="table">
-    <td class="table__itm {{status}}">
-        {{id}}
-        <div class="table__popup">
-            <p>Id: {{id}}</p>
-            <p>Name: {{name}}</p>
-            <p>Role: {{role}}</p>
-            <p>Age: {{age}}</p>
-            <p>Status: <b class="{{status}}">{{status}}</b></p>
-        </div>
-    </td>
-</template>
-
 <template name="roomsList">
     <h1 class="title_1">List of rooms:</h1>
 
     <form id="newRoom" class="form">
-        <input type="text" name="room[title]" placeholder="Room title">
-        <input type="text" name="room[length]" placeholder="How many tables in room?">
+        <input class="contact__input contact__input_big" type="text" name="room[title]" placeholder="Room title">
+        <input class="contact__input contact__input_big" type="text" name="room[length]" placeholder="How many tables in room?">
         <h3>Tables map:</h3>
         <div>
-            <input class="table table-button" type="checkbox" name="room[map][0]">
-            <input class="table table-button" type="checkbox" name="room[map][1]">
-            <input class="table table-button" type="checkbox" name="room[map][2]">
-            <input class="table table-button" type="checkbox" name="room[map][3]">
-            <input class="table table-button" type="checkbox" name="room[map][4]">
-            <input class="table table-button" type="checkbox" name="room[map][5]">
-            <input class="table table-button" type="checkbox" name="room[map][6]">
-            <input class="table table-button" type="checkbox" name="room[map][7]">
-            <input class="table table-button" type="checkbox" name="room[map][8]">
-            <input class="table table-button" type="checkbox" name="room[map][9]">
-            <input class="table table-button" type="checkbox" name="room[map][10]">
-            <input class="table table-button" type="checkbox" name="room[map][11]">
-            <input class="table table-button" type="checkbox" name="room[map][12]">
-            <input class="table table-button" type="checkbox" name="room[map][13]">
-            <input class="table table-button" type="checkbox" name="room[map][14]">
-            <input class="table table-button" type="checkbox" name="room[map][15]">
-            <input class="table table-button" type="checkbox" name="room[map][16]">
-            <input class="table table-button" type="checkbox" name="room[map][17]">
-            <input class="table table-button" type="checkbox" name="room[map][18]">
-            <input class="table table-button" type="checkbox" name="room[map][19]">
-            <input class="table table-button" type="checkbox" name="room[map][20]">
-            <input class="table table-button" type="checkbox" name="room[map][21]">
-            <input class="table table-button" type="checkbox" name="room[map][22]">
-            <input class="table table-button" type="checkbox" name="room[map][23]">
-            <input class="table table-button" type="checkbox" name="room[map][24]">
-            <input class="table table-button" type="checkbox" name="room[map][25]">
-            <input class="table table-button" type="checkbox" name="room[map][26]">
-            <input class="table table-button" type="checkbox" name="room[map][27]">
-            <input class="table table-button" type="checkbox" name="room[map][28]">
-            <input class="table table-button" type="checkbox" name="room[map][29]">
-            <input class="table table-button" type="checkbox" name="room[map][30]">
-            <input class="table table-button" type="checkbox" name="room[map][31]">
-            <input class="table table-button" type="checkbox" name="room[map][32]">
-            <input class="table table-button" type="checkbox" name="room[map][33]">
-            <input class="table table-button" type="checkbox" name="room[map][34]">
-            <input class="table table-button" type="checkbox" name="room[map][35]">
-            <input class="table table-button" type="checkbox" name="room[map][36]">
-            <input class="table table-button" type="checkbox" name="room[map][37]">
-            <input class="table table-button" type="checkbox" name="room[map][38]">
-            <input class="table table-button" type="checkbox" name="room[map][39]">
-            <input class="table table-button" type="checkbox" name="room[map][40]">
-            <input class="table table-button" type="checkbox" name="room[map][41]">
-            <input class="table table-button" type="checkbox" name="room[map][42]">
-            <input class="table table-button" type="checkbox" name="room[map][43]">
-            <input class="table table-button" type="checkbox" name="room[map][44]">
-            <input class="table table-button" type="checkbox" name="room[map][45]">
-            <input class="table table-button" type="checkbox" name="room[map][46]">
-            <input class="table table-button" type="checkbox" name="room[map][47]">
-            <input class="table table-button" type="checkbox" name="room[map][48]">
-            <input class="table table-button" type="checkbox" name="room[map][49]">
-            <input class="table table-button" type="checkbox" name="room[map][50]">
-            <input class="table table-button" type="checkbox" name="room[map][51]">
-            <input class="table table-button" type="checkbox" name="room[map][52]">
-            <input class="table table-button" type="checkbox" name="room[map][53]">
-            <input class="table table-button" type="checkbox" name="room[map][54]">
-            <input class="table table-button" type="checkbox" name="room[map][55]">
-            <input class="table table-button" type="checkbox" name="room[map][56]">
-            <input class="table table-button" type="checkbox" name="room[map][57]">
-            <input class="table table-button" type="checkbox" name="room[map][58]">
-            <input class="table table-button" type="checkbox" name="room[map][59]">
-            <input class="table table-button" type="checkbox" name="room[map][60]">
-            <input class="table table-button" type="checkbox" name="room[map][61]">
-            <input class="table table-button" type="checkbox" name="room[map][62]">
-            <input class="table table-button" type="checkbox" name="room[map][63]">
+            <table>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][0]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][1]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][2]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][3]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][4]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][5]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][6]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][7]"></td>
+                </tr>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][8]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][9]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][10]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][11]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][12]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][13]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][14]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][15]"></td>
+                </tr>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][16]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][17]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][18]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][19]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][20]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][21]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][22]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][23]"></td>
+                </tr>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][24]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][25]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][26]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][27]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][28]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][29]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][30]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][31]"></td>
+                </tr>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][32]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][33]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][34]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][35]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][36]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][37]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][38]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][39]"></td>
+                </tr>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][40]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][41]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][42]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][43]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][44]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][45]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][46]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][47]"></td>
+                </tr>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][48]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][49]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][50]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][51]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][52]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][53]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][54]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][55]"></td>
+                </tr>
+                <tr>
+                    <td><input class="table table-button" type="checkbox" name="room[map][56]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][57]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][58]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][59]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][60]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][61]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][62]"></td>
+                    <td><input class="table table-button" type="checkbox" name="room[map][63]"></td>
+                </tr>
+            </table>
         </div>
 
-        <button type="submit">Create</button>
+        <button class="contact__submit contact__submit_blue" type="submit">
+            <p class="contact__submit-inner">Create</p>
+        </button>
     </form>
 
     <ul class="rooms">
@@ -137,6 +144,19 @@
     <li>
         Room #{{id}} ({{name}})
     </li>
+</template>
+
+<template name="table">
+    <td class="table__itm {{status}}">
+        {{id}}
+        <div class="table__popup">
+            <p>Id: {{id}}</p>
+            <p>Name: {{name}}</p>
+            <p>Role: {{role}}</p>
+            <p>Age: {{age}}</p>
+            <p>Status: <b class="{{status}}">{{status}}</b></p>
+        </div>
+    </td>
 </template>
 
 <template name="noTables">

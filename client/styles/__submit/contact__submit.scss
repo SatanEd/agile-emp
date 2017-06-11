@@ -1,0 +1,78 @@
+.contact__submit {
+  position: relative;
+  display: block;
+  width: 90%;
+  height: 60px;
+  margin: 20px auto 0 auto;
+  border: 3px solid white;
+  box-sizing: border-box;
+  background: white;
+  font: 600 15px "Lato", sans-serif;
+  line-height: 52px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  transition: all 0.3s ease;
+
+  @media screen and (min-width: 420px) {
+    width: 300px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 0;
+    height: 100%;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: #00aeec;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      width: 100%;
+      background: white;
+    }
+  }
+
+  &:active {
+    color: #00aeec;
+
+    &:before {
+      content: '';
+      width: 100%;
+      background: #efefef;
+    }
+  }
+
+  &.contact__submit_blue {
+    color: #00aeec;
+    border-color: #00aeec;
+
+    &:hover {
+      color: white;
+
+      &:before {
+        content: '';
+        background: #00aeec;
+      }
+    }
+
+    &:active {
+      color: white;
+
+      &:before {
+        content: '';
+        background: #19b6ee;
+      }
+    }
+  }
+}

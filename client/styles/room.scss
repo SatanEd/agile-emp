@@ -1,4 +1,6 @@
 body {
+  width: 100%;
+  min-height: 100%;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
 }
@@ -94,6 +96,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
+
 // /header
 
 //nav
@@ -129,6 +132,7 @@ body {
     }
   }
 }
+
 // /nav
 
 //table
@@ -137,4 +141,28 @@ body {
   height: 20px;
   background: red;
 }
+
 // /table
+
+//form
+form {
+  &#newRoom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 400px;
+    height: 50%;
+    margin: auto;
+    padding: 16px;
+    border: 1px solid #f9f9f9;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    box-shadow: 0 1px 4px rgba(20, 30, 20, 0.3);
+  }
+}
+
+// /form
