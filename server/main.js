@@ -41,6 +41,12 @@ Meteor.methods({
     return done;
   },
   'remove-room': (id) => {
-    Rooms.remove({id: eval(id)})
+    try {
+      Rooms.remove({id: eval(id)});
+    } catch (e) {
+      return e;
+    }
+
+    return "Successfully removed";
   }
 });
