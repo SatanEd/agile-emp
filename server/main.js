@@ -39,5 +39,8 @@ Meteor.methods({
     }
 
     return done;
+  },
+  'remove-room': (id) => {
+    Rooms.remove({id: eval(id)})
   }
 });

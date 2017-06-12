@@ -22,5 +22,6 @@ kadira:flow-router
 aldeed:simple-schema
 pcel:serialize
 meyerweb-reset
-juliancwirko:postcss
-fourseven:scss
+marccantwell:meteor-scss
+seba:minifiers-autoprefixer
+session
