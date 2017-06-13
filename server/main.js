@@ -1,5 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import Rooms from '../imports/api/rooms/rooms';
+import Tables from '../imports/api/rooms/tables.js';
 
 Meteor.startup(() => {
 });

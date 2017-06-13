@@ -2,30 +2,17 @@ import {Template} from 'meteor/templating';
 import {ReactiveVar} from 'meteor/reactive-var';
 
 import Rooms from '../imports/api/rooms/rooms';
+import Tables from '../imports/api/rooms/tables.js';
 
 import './index.html';
 
 FlowRouter.route('/room/:id', {
   name: 'Room',
   action(params, queryParams) {
-    let roomId = typeof(params.id) === 'number' ? params.id : 1;
+    // Session.set('currentPage', 'tables');
 
-    Template.room.helpers({
-      id: roomId,
-
-      tables() {
-        let room = Rooms.findOne({id: eval(roomId)});
-
-        if (room) {
-          let roomMap = room.map;
-
-          if (room.tables.length !== 0) {
-            return [].concat(room.tables);
-          }
-        } else {
-          return false;
-        }
-      }
+    BlazeLayout.render("tables", {
+      roomId: params.id
     });
   }
 });
@@ -33,5 +20,18 @@ FlowRouter.route('/room/:id', {
 FlowRouter.route('/rooms', {
   name: 'Tables',
   action(params, queryParams) {
+    BlazeLayout.render("roomsList", {
+      page: 'roomsList',
+    });
+  }
+});
+
+FlowRouter.route('/emplist', {
+  name: 'Employers list',
+  action(params, queryParams) {
+    BlazeLayout.render("tables", {
+      page: 'tables',
+      roomId: 1
+    });
   }
 });

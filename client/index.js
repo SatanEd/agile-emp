@@ -2,16 +2,16 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 Template.index.onCreated( function() {
-  this.currentPage = new ReactiveVar( "roomsList" );
+  // Session.set('currentPage', 'roomsList');
 });
 
 Template.index.helpers({
   page: function() {
-    return Template.instance().currentPage.get();
+    // return Session.get('currentPage');
   },
   pageData: function() {
-    var page = Template.instance().currentPage.get();
+    var page = Session.get('currentPage');
 
-    return page;
+    // return page;
   }
 });

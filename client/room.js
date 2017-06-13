@@ -19,11 +19,11 @@ Template.room.events({
 });
 
 Template.body.events({
-  'click *'(e) {
-    if (!$(e.target).hasClass('popup')) {
-      $('.popup').removeClass('popup');
-    }
-  },
+  // 'click *'(e) {
+  //   if (!$(e.target).hasClass('popup')) {
+  //     $('.popup').removeClass('popup');
+  //   }
+  // },
 });
 
 Template.roomsList.onCreated(() => {
@@ -50,7 +50,7 @@ Template.roomsList.events({
   'click .form__close'(e) {
     $form = $(e.target).parents('.form__wrapper').eq(0);
     $form.addClass('hide');
-    $form[0].reset();
+    $form.find('form')[0].reset();
   },
   'click #addNewRoom'() {
     $form = $('.form__wrapper').eq(0);
@@ -68,12 +68,12 @@ Template.roomsList.events({
       Meteor.call('remove-room', Session.get('roomRmvId'), (err, res) => {
         if (err) {
           /*
-          @TODO popup answer
+          @TODO error popup
            */
-          console.log(err);
           return;
         }
 
+        $this.parents('.room_remove__wrapper').removeClass('active');
         console.log(res);
       });
     }
@@ -83,7 +83,7 @@ Template.roomsList.events({
 Template.roomsList.helpers({
   rooms() {
     let rooms = Rooms.find({}, {$sort: {id: 1}}).fetch();
-    console.log(rooms);
+    // console.log(rooms);
     return rooms;
   },
   roomRmvId() {

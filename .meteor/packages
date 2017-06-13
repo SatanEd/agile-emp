@@ -25,3 +25,4 @@ meyerweb-reset
 marccantwell:meteor-scss
 seba:minifiers-autoprefixer
 session
+kadira:blaze-layout

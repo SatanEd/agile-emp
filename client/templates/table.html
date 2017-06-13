@@ -1,0 +1,30 @@
+<template name="tables">
+    {{roomId}}
+    <table>
+        <tr>
+            {{#each tables}}
+                {{> table}}
+            {{/each}}
+        </tr>
+    </table>
+</template>
+
+<template name="noTables">
+    <div class="no_tables">
+        <div class="no_tables__inner">
+            <h1 class="title_1">Ssory, this room doesn't have tables in it.</h1>
+        </div>
+    </div>
+</template>
+
+
+<template name="table">
+    <td class="table__itm">
+        {{id}}
+        <div class="table__popup">
+            <p>Id: {{id}}</p>
+            <p>Name: {{name}}</p>
+            <p>Role: {{role}}</p>
+        </div>
+    </td>
+</template>
