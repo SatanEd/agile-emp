@@ -4,8 +4,10 @@ import {ReactiveVar} from 'meteor/reactive-var';
 import Rooms from '../imports/api/rooms/rooms';
 import { Session } from 'meteor/session'
 
-Template.room.events({
+Template.tables.events({
   'click .table__itm'(e) {
+    $('.popup').removeClass('popup');
+
     $(e.target).addClass('popup');
   },
   'click li'(e, i) {
@@ -19,11 +21,11 @@ Template.room.events({
 });
 
 Template.body.events({
-  // 'click *'(e) {
-  //   if (!$(e.target).hasClass('popup')) {
-  //     $('.popup').removeClass('popup');
-  //   }
-  // },
+  'click *'(e) {
+    if (!$(e.target).hasClass('popup')) {
+      $('.popup').removeClass('popup');
+    }
+  }
 });
 
 Template.roomsList.onCreated(() => {

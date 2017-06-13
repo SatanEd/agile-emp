@@ -1,6 +1,6 @@
 <template name="tables">
     {{roomId}}
-    <table>
+    <table class="room">
         <tr>
             {{#each tables}}
                 {{> table}}
@@ -19,12 +19,14 @@
 
 
 <template name="table">
-    <td class="table__itm">
-        {{id}}
-        <div class="table__popup">
-            <p>Id: {{id}}</p>
-            <p>Name: {{name}}</p>
-            <p>Role: {{role}}</p>
-        </div>
+    <td class="table__itm {{#if id}} active {{else}} free {{/if}}">
+        {{#if id}}
+            {{id}}
+            <div class="table__popup">
+                <p>Id: {{id}}</p>
+                <p>Name: {{name}}</p>
+                <p>Role: {{role}}</p>
+            </div>
+        {{/if}}
     </td>
 </template>
