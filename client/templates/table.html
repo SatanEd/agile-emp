@@ -1,12 +1,16 @@
 <template name="tables">
-    {{roomId}}
-    <table class="room">
-        <tr>
-            {{#each tables}}
-                {{> table}}
+    {{#if roomId}}
+        <h1 class="title_2">Room #{{roomId}}</h1>
+        <table class="room">
+            {{#each tablez in tables}}
+                <tr>
+                    {{#each tablez}}
+                        {{> table}}
+                    {{/each}}
+                </tr>
             {{/each}}
-        </tr>
-    </table>
+        </table>
+    {{/if}}
 </template>
 
 <template name="noTables">
@@ -17,16 +21,47 @@
     </div>
 </template>
 
-
 <template name="table">
-    <td class="table__itm {{#if id}} active {{else}} free {{/if}}">
-        {{#if id}}
+    <td class="table__itm {{status}}">
+        {{#if equals status "free"}}
             {{id}}
             <div class="table__popup">
-                <p>Id: {{id}}</p>
-                <p>Name: {{name}}</p>
-                <p>Role: {{role}}</p>
+                <form class="new_table">
+                    <div class="form__inner">
+                        <input type="hidden" name="table[roomId]" value="{{roomId}}">
+                        <input type="hidden" name="table[position]" value="{{position}}">
+                        <input type="hidden" name="table[id]" value="{{id}}">
+                        <input class="contact__input contact__input_big new_room_form" type="text" name="table[name]"
+                               placeholder="Name">
+                        <input class="contact__input contact__input_big new_room_form" type="text" name="table[role]"
+                               placeholder="Role">
+                    </div>
+                    <button type="submit" class="table__btn table__btn_create"><span>Create</span></button>
+                </form>
             </div>
+        {{else}}
+            {{#unless equals status "none"}}
+                {{id}}
+                <div class="table__popup">
+                    <form class="update_table">
+                        <div class="table__popup_form">
+                            <input class="contact__input contact__input_big new_room_form" type="hidden" name="table[id]" value="{{id}}">
+                            <input class="contact__input contact__input_big new_room_form" type="hidden" name="table[position]" value="{{position}}">
+                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[roomId]" value="{{roomId}}">
+                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[name]" value="{{name}}">
+                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[role]" value="{{role}}">
+                        </div>
+                        <div class="table__popup_info">
+                            <p>Id: {{id}}</p>
+                            <p>Name: {{name}}</p>
+                            <p>Role: {{role}}</p>
+                            <p>Status: <b class="{{status}}">{{status}}</b></p>
+                        </div>
+                        <button type="submit" class="table__btn table__btn_edit"><span>Edit</span></button>
+                        <button class="table__btn table__btn_cancel"><span>Cancel</span></button>
+                    </form>
+                </div>
+            {{/unless}}
         {{/if}}
     </td>
 </template>

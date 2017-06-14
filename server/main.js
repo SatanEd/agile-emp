@@ -3,6 +3,24 @@ import Rooms from '../imports/api/rooms/rooms';
 import Tables from '../imports/api/rooms/tables.js';
 
 Meteor.startup(() => {
+  /*
+  @TODO create method 'insert-table'
+   */
+  // let newDoc = {
+  //   roomId: 1,
+  //   position: 4,
+  //   id: 3,
+  //   name: "George",
+  //   role: "Designer",
+  //   status: "active"
+  // };
+  //
+  // try {
+  //   Tables.schema.validate(newDoc);
+  //   Tables.insert(newDoc);
+  // } catch (e) {
+  //   console.log(e.message);
+  // }
 });
 
 Meteor.methods({
@@ -15,7 +33,7 @@ Meteor.methods({
         map = Object.keys(formData.room.map);
       result = result.fill(0);
 
-      for (let i = 0; i <map.length; i++) {
+      for (let i = 0; i < map.length; i++) {
         result[map[i]] = 1;
       }
 
@@ -36,7 +54,7 @@ Meteor.methods({
       Rooms.insert(document);
     } catch (e) {
       done = {code: 500, message: e.code};
-      console.log('\x1b[31m%s\x1b[0m', e);
+      throw new Error(e.message);
     }
 
     return done;
@@ -45,9 +63,58 @@ Meteor.methods({
     try {
       Rooms.remove({id: eval(id)});
     } catch (e) {
-      return e;
+      throw new Error(e.message);
     }
 
     return "Successfully removed";
+  },
+  'insert-table': (formData) => {
+    /*
+    @TODO validation
+     */
+
+    let newDoc = {
+      roomId: parseInt(formData.table.roomId),
+      id: parseInt(formData.table.id),
+      position: parseInt(formData.table.position),
+      name: formData.table.name,
+      role: formData.table.role,
+      status: 'active'
+    };
+
+    try {
+      Tables.schema.validate(newDoc);
+      Tables.insert(newDoc);
+    } catch (e) {
+      throw new Error(e.message);
+    }
+
+    return "New table successfully added.";
+  },
+  'update-table': (formData) => {
+    /*
+    @TODO validation
+     */
+
+    let newDoc = {
+      roomId: parseInt(formData.table.roomId),
+      id: parseInt(formData.table.id),
+      position: parseInt(formData.table.position),
+      name: formData.table.name,
+      role: formData.table.role,
+      status: 'active'
+    };
+
+    try {
+      Tables.schema.validate(newDoc);
+      Tables.update({
+        roomId: parseInt(formData.table.roomId),
+        id: parseInt(formData.table.id)
+      }, newDoc);
+    } catch (e) {
+      throw new Error(e.message);
+    }
+
+    return "New table successfully added.";
   }
 });
