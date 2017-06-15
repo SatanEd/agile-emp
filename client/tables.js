@@ -12,6 +12,9 @@ Object.defineProperty(Array.prototype, 'separateArray', {
   }
 });
 
+function extracted(itms, tables) {
+  itms[tables[table].position].roomId = Session.get('roomId') || 1;
+}
 Template.tables.helpers({
   tables() {
     let tables = Tables.find({roomId: eval(Session.get('roomId') || 1)}).fetch();
@@ -33,7 +36,7 @@ Template.tables.helpers({
 
       for (table in tables) {
         itms[tables[table].position] = tables[table];
-        itms[tables[table].position].roomId = Session.get('roomId') || 1;
+        extracted(itms, tables);
       }
 
       if (tables) {
@@ -42,5 +45,20 @@ Template.tables.helpers({
         return false;
       }
     }
+  }
+});
+
+Template.tables.events({
+  'click .table__itm'(e, i) {
+    if ($(e.target).hasClass('table__itm') && !$(e.target).hasClass('none')) {
+      $('.popup').removeClass('popup');
+
+      $(e.target).addClass('popup');
+    }
+  },
+  'click li'(e, i) {
+    /*
+     @TODO room info
+     */
   }
 });

@@ -124,14 +124,19 @@
 
     <div class="room_remove__wrapper">
         <div class="room_remove">
-            <div class="room_remove_row">
-                <p class="room_remove__message">
-                    Do you really want to remove room #{{roomRmvId}}?
-                </p>
+            <div class="room_remove__inner">
+                <div class="room_remove_row">
+                    <p class="room_remove__message">
+                        Do you really want to remove room #{{roomRmvId}}?
+                    </p>
+                </div>
+                <div class="room_remove_row room_remove_row-buttons">
+                    <button><span class="room_remove_btn cancel">cancel</span></button>
+                    <button><span class="room_remove_btn remove">remove</span></button>
+                </div>
             </div>
-            <div class="room_remove_row room_remove_row-buttons">
-                <button><span class="room_remove_btn cancel">cancel</span></button>
-                <button><span class="room_remove_btn remove">remove</span></button>
+            <div class="room_remove__answer">
+                <p class="room_remove__answer_inner">{{answerMessage}}</p>
             </div>
         </div>
     </div>

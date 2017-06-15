@@ -8,28 +8,9 @@ Template.registerHelper('equals', function (a, b) {
   return a === b;
 });
 
-Template.tables.events({
-  'click .table__itm'(e, i) {
-    if ($(e.target).hasClass('table__itm') && !$(e.target).hasClass('none')) {
-      $('.popup').removeClass('popup');
-
-      $(e.target).addClass('popup');
-    }
-  },
-  'click li'(e, i) {
-    /*
-     @TODO room info
-     */
-  },
-  'click .room_info__remove'(e, i) {
-    Session.set('roomRmvId', i.data.id);
-
-    $('.room_remove__wrapper').eq(0).addClass('active');
-  }
-});
-
 Template.roomsList.onCreated(() => {
   Session.setDefault('roomRmvId', 0);
+  Session.setDefault('answerMessage', '');
 });
 
 Template.roomsList.events({
@@ -46,7 +27,6 @@ Template.roomsList.events({
       }
 
       $this.addClass('form-message').find('.form__answer').eq(0).addClass('active');
-      console.log(i);
     });
   },
   'click .form__close'(e) {
@@ -62,30 +42,45 @@ Template.roomsList.events({
     }
   },
   'click .room_remove_btn'(e) {
-    $this = $(e.target);
+    $this = $(e.target),
+      $wrapper = $this.parents('.room_remove__wrapper'),
+      $answer = $wrapper.find('.room_remove__answer').eq(0),
+      $inner = $wrapper.find('.room_remove__inner').eq(0);
 
     if ($this.hasClass('cancel')) {
-      $this.parents('.room_remove__wrapper').removeClass('active');
+      $wrapper.removeClass('active');
     } else if ($this.hasClass('remove')) {
       Meteor.call('remove-room', Session.get('roomRmvId'), (err, res) => {
         if (err) {
-          /*
-           @TODO error popup
-           */
+          Session.set('answerMessage', err);
           return;
         }
+        Session.set('answerMessage', res);
+        $answer.addClass('active');
+        $inner.addClass('hide');
 
-        $this.parents('.room_remove__wrapper').removeClass('active');
-        console.log(res);
+        setTimeout(function () {
+          $wrapper.animate({
+            opacity: 0
+          }, function () {
+            $wrapper.removeClass('active').removeAttr('style');
+
+            Session.set('answerMessage', '');
+            $answer.removeClass('active');
+            $inner.removeClass('hide');
+          });
+        }, 1000);
       });
     }
   }
 });
 
 Template.roomsList.helpers({
+  answerMessage() {
+    return Session.get('answerMessage');
+  },
   rooms() {
     let rooms = Rooms.find({}, {$sort: {id: 1}}).fetch();
-    // console.log(rooms);
     return rooms;
   },
   roomRmvId() {
@@ -93,44 +88,10 @@ Template.roomsList.helpers({
   }
 });
 
-Template.table.events({
-  'submit .new_table'(e) {
-    e.preventDefault();
+Template.room.events({
+  'click .room_info__remove'(e, i) {
+    Session.set('roomRmvId', i.data.id);
 
-    Meteor.call('insert-table', $(e.target).serializeJSON(), function (err, res) {
-      if (err) {
-        console.error(err.message);
-      }
-
-      console.log(res);
-    });
-  },
-  'click .table__btn_edit'(e) {
-    e.preventDefault();
-    $this = $(e.target).is('button') ? $(e.target) : $(e.target).parent(),
-      $form = $this.parents('form'),
-      $inputs = $form.find('.table__popup_form').eq(0);
-
-    if (!$inputs.hasClass('active')) {
-      $inputs.addClass('active');
-      $this.parents('form').find('.table__popup_info').eq(0).addClass('hide');
-      $this.parents('form').find('.table__btn_cancel').eq(0).addClass('active');
-    } else {
-      Meteor.call('update-table', $form.serializeJSON(), function (err, res) {
-        if (err) {
-          console.error(err.message);
-        }
-
-        console.log(res);
-      });
-    }
-  },
-  'click .table__btn_cancel'(e) {
-    e.preventDefault();
-    $this = $(e.target).is('button') ? $(e.target) : $(e.target).parent();
-
-    $this.parents('form').find('.table__popup_form').eq(0).removeClass('active');
-    $this.parents('form').find('.table__popup_info').eq(0).removeClass('hide');
-    $this.removeClass('active');
+    $('.room_remove__wrapper').eq(0).addClass('active');
   }
 });

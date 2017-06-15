@@ -9,9 +9,8 @@ import './index.html';
 FlowRouter.route('/room/:id', {
   name: 'Room',
   action(params, queryParams) {
-    // Session.set('currentPage', 'tables');
-
     BlazeLayout.render("tables", {
+      page: 'tables',
       roomId: params.id
     });
   }

@@ -446,6 +446,25 @@ form {
   height: 100%;
   background-color: rgba(20, 20, 20, 0.8);
 
+  & .room_remove__inner {
+    display: table-row-group;
+    
+    &.hide {
+      display: none;
+    }
+  }
+
+  & .room_remove__answer {
+    position: relative;
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+
+    &.active {
+      display: table-cell;
+    }
+  }
+
   &.active {
     display: table;
   }
