@@ -9,21 +9,21 @@ Template.employers.helpers({
     let list,
       req = Session.get('empSearch').toString().trim();
 
-    if (req !== '') {
-      list = Meteor.call('emp-search', req, function(err, res) {
-        if (err) {
-          console.log(err);
-          return new Error(err);
-        }
+    Meteor.call('emp-search', req, function(err, res) {
+      if (err) {
+        console.log(err);
+        return new Error(err);
+      }
 
-        if (res)
-          return res;
-      });
-    } else {
-      list = Emp.find({}).fetch();
-    }
+      if (res) {
+        list = res;
+      } else {
+        list = Emp.find({}).fetch();
+      }
+    });
 
     if (list) {
+      console.log(list);
       return list;
     }
 
