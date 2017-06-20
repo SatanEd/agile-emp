@@ -35,6 +35,8 @@ Template.tables.helpers({
       });
 
       for (table in tables) {
+        if (tables[table].id.toString().search('-') !== -1)
+          tables[table].id = tables[table].id.toString().split('-')[1];
         itms[tables[table].position] = tables[table];
         extracted(itms, tables);
       }

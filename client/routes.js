@@ -9,9 +9,11 @@ import './index.html';
 FlowRouter.route('/room/:id', {
   name: 'Room',
   action(params, queryParams) {
+    Session.set('roomId', params.id);
+
     BlazeLayout.render("tables", {
       page: 'tables',
-      roomId: params.id
+      roomId: Session.get('roomId')
     });
   }
 });
@@ -28,9 +30,8 @@ FlowRouter.route('/rooms', {
 FlowRouter.route('/emplist', {
   name: 'Employers list',
   action(params, queryParams) {
-    BlazeLayout.render("tables", {
-      page: 'tables',
-      roomId: 1
+    BlazeLayout.render("employers", {
+      page: 'employers'
     });
   }
 });

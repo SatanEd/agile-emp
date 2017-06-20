@@ -5,7 +5,7 @@ let Tables = new Mongo.Collection('tables');
 Tables.schema = new SimpleSchema({
   roomId: {type: Number},
   position: {type: Number},
-  id: {type: Number, defaultValue: eval(Tables.find({}).count()+1)},
+  id: {type: String, defaultValue: this.roomId + '-' + eval(Tables.find({}).count()+1)},
   name: {type: String},
   email: {type: String, optional: true},
   role: {type: String},

@@ -28,9 +28,6 @@
             <div class="table__popup">
                 <form class="new_table">
                     <div class="form__inner">
-                        <input type="hidden" name="table[roomId]" value="{{roomId}}">
-                        <input type="hidden" name="table[position]" value="{{position}}">
-                        <input type="hidden" name="table[id]" value="{{id}}">
                         <input class="contact__input contact__input_big new_room_form" type="text" name="table[name]"
                                placeholder="Name">
                         <input class="contact__input contact__input_big new_room_form" type="text" name="table[role]"
@@ -45,11 +42,13 @@
                 <div class="table__popup">
                     <form class="update_table">
                         <div class="table__popup_form">
-                            <input class="contact__input contact__input_big new_room_form" type="hidden" name="table[id]" value="{{id}}">
-                            <input class="contact__input contact__input_big new_room_form" type="hidden" name="table[position]" value="{{position}}">
-                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[roomId]" value="{{roomId}}">
-                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[name]" value="{{name}}">
-                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[role]" value="{{role}}">
+                            <select class="contact__input contact__input_big new_room_form" type="text" name="table[roomId]" placeholder="{{roomId}}">
+                                {{#each roomsCount}}
+                                    <option value="{{id}}">{{id}}</option>
+                                {{/each}}
+                            </select>
+                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[name]" placeholder="{{name}}">
+                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[role]" placeholder="{{role}}">
                         </div>
                         <div class="table__popup_info">
                             <p>Id: {{id}}</p>

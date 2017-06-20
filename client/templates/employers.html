@@ -1,0 +1,15 @@
+<template name="employers">
+    <aside class="emp__aside">
+        <input class="emp__search" type="text" id="emp_serach" placeholder="Search">
+
+        <ul class="emp__list">
+            {{#each empList}}
+                {{> employe}}
+            {{/each}}
+        </ul>
+    </aside>
+</template>
+
+<template name="employe">
+    <li class="emp__list_itm">{{firstname}} {{lastname}}</li>
+</template>
