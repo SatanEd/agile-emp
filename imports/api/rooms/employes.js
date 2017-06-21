@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 
-let Emp = new Mongo.Collection('employers');
+let Emp = new Mongo.Collection('employes');
 
 Emp.schema = new SimpleSchema({
   firstname: {type: String},

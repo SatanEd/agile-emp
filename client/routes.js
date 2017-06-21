@@ -28,10 +28,10 @@ FlowRouter.route('/rooms', {
 });
 
 FlowRouter.route('/emplist', {
-  name: 'Employers list',
+  name: 'employes list',
   action(params, queryParams) {
-    BlazeLayout.render("employers", {
-      page: 'employers'
+    BlazeLayout.render("employes", {
+      page: 'employes'
     });
   }
 });

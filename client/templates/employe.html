@@ -1,0 +1,21 @@
+<template name="employe">
+    <li class="emp__list_itm">
+        <div class="emp__list_itm_inner">
+            {{firstname}} {{lastname}}
+        </div>
+        <div class="emp__info">
+            {{#if firstname}}
+                <h2><span>Name:</span> {{firstname}} {{#if lastname}} {{lastname}} {{/if}}</h2>
+            {{/if}}
+            {{#if role}}
+                <h2><span>Role:</span> {{role}}</h2>
+            {{/if}}
+            {{#if email}}
+                <h2><span>Email:</span> {{email}}</h2>
+            {{/if}}
+            {{#if birth}}
+                <h2><span>Birthday:</span> {{birth}}</h2>
+            {{/if}}
+        </div>
+    </li>
+</template>

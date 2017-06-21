@@ -1,27 +1,27 @@
 import {Meteor} from 'meteor/meteor';
 import Rooms from '../imports/api/rooms/rooms';
 import Tables from '../imports/api/rooms/tables';
-import Emp from '../imports/api/rooms/employers';
+import Emp from '../imports/api/rooms/employes';
 
 Meteor.startup(() => {
   /*
    @TODO create method 'insert-table'
    */
-  // let newDoc = {
-  //   firstname: "Edward",
-  //   lastname: "Rembrant",
-  //   email: "fd@gmail.com",
-  //   role: "Frontend",
-  //   birth: new Date(),
-  //   status: "active"
-  // };
-  //
-  // try {
-  //   Emp.schema.validate(newDoc);
-  //   Emp.insert(newDoc);
-  // } catch (e) {
-  //   console.log(e.message);
-  // }
+  let newDoc = {
+    firstname: "George",
+    lastname: "Tihonciuk",
+    email: "george@agilepartners.eu",
+    role: "Designer",
+    birth: new Date('2/Jan/1989'),
+    status: "active"
+  };
+
+  try {
+    Emp.schema.validate(newDoc);
+    Emp.insert(newDoc);
+  } catch (e) {
+    console.log(e.message);
+  }
 });
 
 Meteor.methods({

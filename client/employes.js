@@ -1,10 +1,10 @@
-import Emp from '../imports/api/rooms/employers';
+import Emp from '../imports/api/rooms/employes';
 
-Template.employers.onCreated(function () {
+Template.employes.onCreated(function () {
   Session.setDefault('empSearch', '');
 });
 
-Template.employers.helpers({
+Template.employes.helpers({
   empList() {
     let req = Session.get('empSearch').toString().trim(),
       result;
@@ -15,14 +15,19 @@ Template.employers.helpers({
           {lastname: {$regex: req, $options: 'im'}},
           {role: {$regex: req, $options: 'im'}}
         ]}).fetch() || [];
+    } else {
+      result = Emp.find({}).fetch();
     }
 
     return result;
   }
 });
 
-Template.employers.events({
+Template.employes.events({
   'keyup #emp_serach'(e) {
     Session.set('empSearch', $(e.target).val())
+  },
+  'click .emp__new_emp'(e) {
+    $('.form__wrapper').eq(0).removeClass('hide');
   }
 });

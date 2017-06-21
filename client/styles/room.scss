@@ -280,28 +280,26 @@ body {
 
 //form
 form {
-  &#newRoom {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 400px;
-    height: 50%;
-    min-height: 620px;
-    margin: auto;
-    padding: 16px;
-    border: 1px solid #f9f9f9;
-    border-radius: 4px;
-    background-color: #f5f5f5;
-    box-sizing: border-box;
-    box-shadow: 0 1px 4px rgba(20, 30, 20, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 400px;
+  height: 50%;
+  min-height: 620px;
+  margin: auto;
+  padding: 16px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(20, 30, 20, 0.3);
 
-    &.form-message {
-      height: 300px;
-      min-height: initial;
-    }
+  &.form-message {
+    height: 300px;
+    min-height: initial;
   }
 }
 
@@ -448,7 +446,7 @@ form {
 
   & .room_remove__inner {
     display: table-row-group;
-    
+
     &.hide {
       display: none;
     }

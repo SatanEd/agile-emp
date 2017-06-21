@@ -1,0 +1,40 @@
+<template name="employes">
+    <div class="emp__search_wrapper">
+        <input class="emp__search" type="text" id="emp_serach" placeholder="Search">
+
+        <ul class="emp__list">
+            {{#each empList}}
+                {{> employe}}
+            {{/each}}
+        </ul>
+        <button class="contact__submit contact__submit_blue emp__new_emp">
+            <p class="contact__submit-inner">add new employe</p>
+        </button>
+    </div>
+    <div class="form__wrapper hide">
+        <form id="newEmploye" class="form">
+            <div class="form__close"></div>
+
+            <div class="form__inner">
+                <h1 class="title_1">New employe</h1>
+                <input class="contact__input contact__input_big new_room_form" type="text" name="employe[firstname]" placeholder="Name">
+                <input class="contact__input contact__input_big new_room_form" type="text" name="employe[lastname]" placeholder="Lastname">
+                <input class="contact__input contact__input_big new_room_form" type="text" name="employe[email]" placeholder="Email">
+                <input class="contact__input contact__input_big new_room_form" type="text" name="employe[role]" placeholder="Role">
+                <input class="contact__input contact__input_big new_room_form" type="text" name="employe[birth]" placeholder="Birthday">
+
+                <button class="contact__submit contact__submit_blue" type="submit">
+                    <p class="contact__submit-inner">Add</p>
+                </button>
+            </div>
+
+            <div class="form__answer">
+                <h1 class="title_1 title_1-answer">Done!
+                </h1>
+                <div class="form__answer_p_wrapper">
+                    <p class="form__answer_p">New room successfully added.</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
