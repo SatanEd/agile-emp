@@ -5,7 +5,7 @@ import Emp from '../imports/api/rooms/employers';
 
 Meteor.startup(() => {
   /*
-  @TODO create method 'insert-table'
+   @TODO create method 'insert-table'
    */
   // let newDoc = {
   //   firstname: "Edward",
@@ -111,17 +111,5 @@ Meteor.methods({
     }
 
     return "Table information was changed.";
-  },
-  'emp-search': (req) => {
-    let res = Emp.find({
-      $text: {
-        $search: req ,
-        $caseSensitive: false
-      }
-    }).fetch();
-
-    if (res) {
-      return res;
-    }
   }
 });

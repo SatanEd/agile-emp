@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c645a026-0c26-4de3-a96b-e90429cee390" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/employers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/employers.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/api/rooms/employers.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/templates/table.js" afterPath="$PROJECT_DIR$/client/table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/styles/emp.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/routes.js" afterPath="$PROJECT_DIR$/client/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/tables.js" afterPath="$PROJECT_DIR$/client/tables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/table.html" afterPath="$PROJECT_DIR$/client/templates/table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/rooms/tables.js" afterPath="$PROJECT_DIR$/imports/api/rooms/tables.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/employers.js" afterPath="$PROJECT_DIR$/client/employers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/employers.html" afterPath="$PROJECT_DIR$/client/templates/employers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/index.html" afterPath="$PROJECT_DIR$/client/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/main.js" afterPath="$PROJECT_DIR$/server/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,14 +21,36 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3272059">
+    <splitter split-orientation="horizontal" split-proportion="0.4209559">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="room.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/styles/room.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="398">
-                  <caret line="456" column="26" lean-forward="false" selection-start-line="456" selection-start-column="26" selection-end-line="456" selection-end-column="26" />
+                <state relative-caret-position="249">
+                  <caret line="511" column="26" lean-forward="true" selection-start-line="511" selection-start-column="26" selection-end-line="511" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/routes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="480">
+                  <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="34" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#0#43#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="employers.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/employers.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -48,87 +66,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="packages" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.meteor/packages">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="room.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/room.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1026">
-                  <caret line="74" column="3" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
-                  <folding>
-                    <element signature="e#0#43#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tables.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/tables.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="402">
-                  <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-                  <folding>
-                    <element signature="e#0#52#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/routes.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#0#43#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="employers.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="employers.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/templates/employers.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="employers.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/imports/api/rooms/employers.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="employers.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/client/employers.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+                <state relative-caret-position="225">
+                  <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -138,6 +80,26 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="emp.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/styles/emp.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="650">
+                  <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/templates/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/index.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -161,7 +123,7 @@
           <file leaf-file-name="table.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/table.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
+                <state relative-caret-position="-180">
                   <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
                   <folding />
                 </state>
@@ -191,7 +153,7 @@
           <file leaf-file-name="table.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/templates/table.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
+                <state relative-caret-position="435">
                   <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
                   <folding />
                 </state>
@@ -210,24 +172,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="835">
-                  <caret line="123" column="17" lean-forward="true" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
+                <state relative-caret-position="626">
+                  <caret line="113" column="3" lean-forward="false" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
                   <folding>
                     <element signature="e#0#37#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="rooms.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/templates/rooms.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="617">
-                  <caret line="142" column="11" lean-forward="true" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -246,9 +198,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>room_info__remove</find>
-      <find>update_tabl</find>
-      <find>update_tab</find>
       <find>update_ta</find>
       <find>update_t</find>
       <find>update_</find>
@@ -267,15 +216,18 @@
       <find>.tables</find>
       <find>tables(</find>
       <find>id</find>
-      <find>tablez</find>
-      <find>new_table</find>
-      <find>update_table</find>
       <find>tables()</find>
       <find>ta</find>
       <find>table</find>
       <find>tables</find>
       <find>tables.</find>
       <find>.tables.</find>
+      <find>return</find>
+      <find>update_table</find>
+      <find>new_table</find>
+      <find>tablez</find>
+      <find>aside</find>
+      <find>color</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;br&gt;</replace>
@@ -309,7 +261,6 @@
         <option value="$PROJECT_DIR$/client/styles/table.scss" />
         <option value="$PROJECT_DIR$/client/templates/room.html" />
         <option value="$PROJECT_DIR$/client/index.html" />
-        <option value="$PROJECT_DIR$/client/templates/index.html" />
         <option value="$PROJECT_DIR$/client/index.js" />
         <option value="$PROJECT_DIR$/client/room.js" />
         <option value="$PROJECT_DIR$/client/styles/room.scss" />
@@ -322,8 +273,10 @@
         <option value="$PROJECT_DIR$/client/routes.js" />
         <option value="$PROJECT_DIR$/imports/api/rooms/employers.js" />
         <option value="$PROJECT_DIR$/server/main.js" />
-        <option value="$PROJECT_DIR$/client/templates/employers.html" />
         <option value="$PROJECT_DIR$/client/employers.js" />
+        <option value="$PROJECT_DIR$/client/templates/employers.html" />
+        <option value="$PROJECT_DIR$/client/styles/emp.scss" />
+        <option value="$PROJECT_DIR$/client/templates/index.html" />
       </list>
     </option>
   </component>
@@ -594,7 +547,7 @@
       <workItem from="1496834356776" duration="57297000" />
       <workItem from="1497209473203" duration="304000" />
       <workItem from="1497866676193" duration="698000" />
-      <workItem from="1497944573526" duration="17520000" />
+      <workItem from="1497944573526" duration="30299000" />
     </task>
     <task id="LOCAL-00001" summary="Styles&#10;Popup element&#10;Database">
       <created>1496934145410</created>
@@ -659,11 +612,25 @@
       <option name="project" value="LOCAL" />
       <updated>1497528961135</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="employers - template, helpers, events, base">
+      <created>1497970434067</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1497970434067</updated>
+    </task>
+    <task id="LOCAL-00011" summary="employers search changed">
+      <created>1497970993801</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1497970993801</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160823000" />
+    <option name="totallyTimeSpent" value="173602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -760,7 +727,9 @@
     <MESSAGE value="tables set" />
     <MESSAGE value="tables set former modified&#10;table insert and update actions handler added&#10;styles" />
     <MESSAGE value="server action handlers" />
-    <option name="LAST_COMMIT_MESSAGE" value="server action handlers" />
+    <MESSAGE value="employers - template, helpers, events, base" />
+    <MESSAGE value="employers search changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="employers search changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -769,16 +738,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="44" column="3" lean-forward="false" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/room.html" />
     <entry file="file://$PROJECT_DIR$/imports/api/rooms/rooms.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -966,50 +925,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.meteor/packages">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/styles/room.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="456" column="26" lean-forward="false" selection-start-line="456" selection-start-column="26" selection-end-line="456" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/rooms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
           <caret line="142" column="11" lean-forward="true" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/styles/table.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1030,26 +949,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/rooms/tables.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="46" lean-forward="false" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="435">
           <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/rooms/employers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1072,22 +983,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/tables.js">
+    <entry file="file://$PROJECT_DIR$/.meteor/packages">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/routes.js">
+    <entry file="file://$PROJECT_DIR$/client/tables.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+        <state relative-caret-position="42">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1102,36 +1011,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/rooms/employers.js">
+    <entry file="file://$PROJECT_DIR$/imports/api/rooms/tables.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="105">
+          <caret line="7" column="46" lean-forward="false" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/employers.html">
+    <entry file="file://$PROJECT_DIR$/client/table.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        <state relative-caret-position="-180">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="123" column="17" lean-forward="true" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
+        <state relative-caret-position="626">
+          <caret line="113" column="3" lean-forward="false" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/styles/table.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/styles/room.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="511" column="26" lean-forward="true" selection-start-line="511" selection-start-column="26" selection-end-line="511" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="34" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/employers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/styles/emp.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/employers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>

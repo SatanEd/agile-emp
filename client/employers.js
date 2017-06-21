@@ -1,38 +1,28 @@
 import Emp from '../imports/api/rooms/employers';
 
 Template.employers.onCreated(function () {
-  Session.setDefault('empSearch', '')
+  Session.setDefault('empSearch', '');
 });
 
 Template.employers.helpers({
   empList() {
-    let list,
-      req = Session.get('empSearch').toString().trim();
+    let req = Session.get('empSearch').toString().trim(),
+      result;
 
-    Meteor.call('emp-search', req, function(err, res) {
-      if (err) {
-        console.log(err);
-        return new Error(err);
-      }
-
-      if (res) {
-        list = res;
-      } else {
-        list = Emp.find({}).fetch();
-      }
-    });
-
-    if (list) {
-      console.log(list);
-      return list;
+    if (req !== '') {
+      result = Emp.find({$or: [
+          {firstname: {$regex: req, $options: 'im'}},
+          {lastname: {$regex: req, $options: 'im'}},
+          {role: {$regex: req, $options: 'im'}}
+        ]}).fetch() || [];
     }
 
-    return;
+    return result;
   }
 });
 
 Template.employers.events({
-  'change #emp_serach'(e) {
+  'keyup #emp_serach'(e) {
     Session.set('empSearch', $(e.target).val())
   }
 });
