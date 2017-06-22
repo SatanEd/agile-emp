@@ -28,10 +28,9 @@
             <div class="table__popup">
                 <form class="new_table">
                     <div class="form__inner">
-                        <input class="contact__input contact__input_big new_room_form" type="text" name="table[name]"
-                               placeholder="Name">
-                        <input class="contact__input contact__input_big new_room_form" type="text" name="table[role]"
-                               placeholder="Role">
+                        <select class="contact__input contact__input_big new_room_form" name="table[name]">
+                            {{> namesOption}}
+                        </select>
                     </div>
                     <button type="submit" class="table__btn table__btn_create"><span>Create</span></button>
                 </form>
@@ -42,17 +41,15 @@
                 <div class="table__popup">
                     <form class="update_table">
                         <div class="table__popup_form">
-                            <select class="contact__input contact__input_big new_room_form" type="text" name="table[roomId]" placeholder="{{roomId}}">
+                            <select class="contact__input contact__input_big new_room_form" name="table[roomId]">
                                 {{#each roomsCount}}
                                     <option value="{{id}}">{{id}}</option>
                                 {{/each}}
                             </select>
-                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[name]" placeholder="{{name}}">
-                            <input class="contact__input contact__input_big new_room_form" type="text" name="table[role]" placeholder="{{role}}">
                         </div>
                         <div class="table__popup_info">
                             <p>Id: {{id}}</p>
-                            <p>Name: {{name}}</p>
+                            <p>Name: {{firstname}} {{lastname}}</p>
                             <p>Role: {{role}}</p>
                             <p>Status: <b class="{{status}}">{{status}}</b></p>
                         </div>
@@ -63,4 +60,10 @@
             {{/unless}}
         {{/if}}
     </td>
+</template>
+
+<template name="namesOption">
+    {{#each name in names}}
+        <option value="{{name.email}}">{{name.firstname}} {{name.lastname}}</option>
+    {{/each}}
 </template>

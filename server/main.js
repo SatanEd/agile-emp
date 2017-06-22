@@ -2,26 +2,32 @@ import {Meteor} from 'meteor/meteor';
 import Rooms from '../imports/api/rooms/rooms';
 import Tables from '../imports/api/rooms/tables';
 import Emp from '../imports/api/rooms/employes';
+import Groups from '../imports/api/rooms/groups';
 
 Meteor.startup(() => {
-  /*
-   @TODO create method 'insert-table'
-   */
-  let newDoc = {
-    firstname: "George",
-    lastname: "Tihonciuk",
-    email: "george@agilepartners.eu",
-    role: "Designer",
-    birth: new Date('2/Jan/1989'),
-    status: "active"
-  };
+  // let newDoc = {
+  //   id: Emp.find({}).count() + 1,
+  //   firstname: "Eduard",
+  //   lastname: "Iliasenco",
+  //   email: "eduard@agilepartners.eu",
+  //   role: "Frontend",
+  //   birth: new Date('3/Mar/1989'),
+  //   status: "active"
+  // };
+  //
+  // try {
+  //   Emp.schema.validate(newDoc);
+  //   Emp.insert(newDoc);
+  // } catch (e) {
+  //   console.log(e.message);
+  // }
 
-  try {
-    Emp.schema.validate(newDoc);
-    Emp.insert(newDoc);
-  } catch (e) {
-    console.log(e.message);
-  }
+  // let newDoc = {
+  //   name: "Backend",
+  //   id: eval(Groups.find({}).count() + 1)
+  // };
+  //
+  // Groups.insert(newDoc);
 });
 
 Meteor.methods({
@@ -70,13 +76,13 @@ Meteor.methods({
     return "Successfully removed";
   },
   'insert-table': (formData, $this) => {
+    let user = Emp.findOne({email: formData.table.name});
+
     let newDoc = {
       roomId: parseInt($this.roomId),
       id: parseInt($this.roomId) + '-' + $this.id,
       position: parseInt($this.position),
-      name: formData.table.name,
-      role: formData.table.role,
-      status: 'active'
+      userId: user.id
     };
 
     try {
@@ -89,27 +95,31 @@ Meteor.methods({
     return "New table successfully added.";
   },
   'update-table': (formData, $this) => {
-    let newDoc = {
-      roomId: parseInt(formData.table.roomId || $this.roomId),
-      id: $this.roomId + '-' + $this.id,
-      position: parseInt(formData.table.position || $this.position),
-      name: formData.table.name || $this.name,
-      role: formData.table.role || $this.role,
-      status: 'active'
-    };
-
-    console.log(newDoc);
-
     try {
-      Tables.schema.validate(newDoc);
+      /*
+      @TODO add validateOne
+       */
       Tables.update({
-        roomId: parseInt($this.roomId),
-        id: newDoc.id
-      }, newDoc);
+        id: ($this.roomId + '-' + $this.id)
+      }, {$set: {roomId: parseInt(formData.table.roomId), id: parseInt(formData.table.roomId) + '-' + $this.id}});
     } catch (e) {
       return e.message;
     }
 
     return "Table information was changed.";
+  },
+  'insert-employe': (formData) => {
+    let newDoc = {
+      firstname: formData.employe.firstname ,
+      lastname: $this.roomId + '-' + $this.id,
+      email: parseInt(formData.employe.position || $this.position),
+      role: formData.employe.name || $this.name,
+      birth: formData.employe.role || $this.role,
+      group: formData.employe.group,
+      status: 'active'
+    };
+
+    if (formData) {
+    }
   }
 });

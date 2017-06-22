@@ -29,5 +29,16 @@ Template.employes.events({
   },
   'click .emp__new_emp'(e) {
     $('.form__wrapper').eq(0).removeClass('hide');
+  },
+  'submit #newEmploye'(e) {
+    e.preventDefault();
+
+    Meteor.call('insert-employe', $(e.target).serializeJSON(), function (err, res) {
+      if (err)
+        console.log(err);
+
+      if (res)
+        console.log(res);
+    });
   }
 });

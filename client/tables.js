@@ -1,5 +1,6 @@
 import Tables from '../imports/api/rooms/tables.js';
 import Rooms from '../imports/api/rooms/rooms';
+import Emp from '../imports/api/rooms/employes';
 
 Object.defineProperty(Array.prototype, 'separateArray', {
   value: function(chunkSize) {
@@ -15,6 +16,7 @@ Object.defineProperty(Array.prototype, 'separateArray', {
 function extracted(itms, tables) {
   itms[tables[table].position].roomId = Session.get('roomId') || 1;
 }
+
 Template.tables.helpers({
   tables() {
     let tables = Tables.find({roomId: eval(Session.get('roomId') || 1)}).fetch();
@@ -35,10 +37,17 @@ Template.tables.helpers({
       });
 
       for (table in tables) {
-        if (tables[table].id.toString().search('-') !== -1)
+        let empOne = Emp.findOne({id: tables[table].userId});
+
+        if (tables[table].id.toString().search('-') !== -1) {
           tables[table].id = tables[table].id.toString().split('-')[1];
+        }
+
         itms[tables[table].position] = tables[table];
         extracted(itms, tables);
+
+        console.log(empOne.status);
+        tables[table] = Object.assign(tables[table], {firstname: empOne.firstname, lastname: empOne.lastname, email: empOne.email, role: empOne.role, status: empOne.status});
       }
 
       if (tables) {
@@ -56,6 +65,7 @@ Template.tables.events({
       $('.popup').removeClass('popup');
 
       $(e.target).addClass('popup');
+      console.log(i);
     }
   },
   'click li'(e, i) {

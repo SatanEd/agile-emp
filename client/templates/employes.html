@@ -19,9 +19,13 @@
                 <h1 class="title_1">New employe</h1>
                 <input class="contact__input contact__input_big new_room_form" type="text" name="employe[firstname]" placeholder="Name">
                 <input class="contact__input contact__input_big new_room_form" type="text" name="employe[lastname]" placeholder="Lastname">
-                <input class="contact__input contact__input_big new_room_form" type="text" name="employe[email]" placeholder="Email">
+                <input class="contact__input contact__input_big new_room_form" type="email" name="employe[email]" placeholder="Email">
+                <input class="contact__input contact__input_big new_room_form" type="tel" name="employe[phone]" placeholder="Phone">
                 <input class="contact__input contact__input_big new_room_form" type="text" name="employe[role]" placeholder="Role">
-                <input class="contact__input contact__input_big new_room_form" type="text" name="employe[birth]" placeholder="Birthday">
+                <input class="contact__input contact__input_big new_room_form" type="date" name="employe[birth]" placeholder="Birthday">
+                <select class="contact__input contact__input_big new_room_form" name="employe[group]">
+                    {{> groupOption}}
+                </select>
 
                 <button class="contact__submit contact__submit_blue" type="submit">
                     <p class="contact__submit-inner">Add</p>
@@ -37,4 +41,10 @@
             </div>
         </form>
     </div>
+</template>
+
+<template name="groupOption">
+    {{#each option in groups}}
+        <option value="{{option.id}}">{{option.name}}</option>
+    {{/each}}
 </template>

@@ -7,3 +7,9 @@ Template.employe.events({
     }, 200);
   }
 });
+
+Template.namesOption.helpers({
+  names() {
+    return Emp.find({}, {email: 1, firstname: 1, lastname: 1}).fetch();
+  }
+});
